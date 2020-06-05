@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+/*
 const express = require('express');
 const app = express();
 
@@ -26,3 +27,20 @@ const server = app.listen(8081, () => {
 
   console.log('App listening at http://%s:%s', host, port);
 });
+*/
+  
+var express = require('express')
+var path = require('path')
+
+var app = express()
+app.set('port', (process.env.PORT || 5000))
+
+var dateipfad = path.join(__dirname, 'public', 'index.html')
+ 
+app.get('/', function(request, response) {
+    response.sendFile(dateipfad)
+})
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
