@@ -35,7 +35,7 @@ var path = require('path')
 var app = express()
 app.set('port', (process.env.PORT || 5000))
 
-var dateipfad = path.join(__dirname, 'public', 'index.html')
+var dateipfad = path.join(__dirname, 'build', 'index.html')
  
 app.get('/', function(request, response) {
     response.sendFile(dateipfad)
